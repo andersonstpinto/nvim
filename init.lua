@@ -364,7 +364,11 @@ require('lazy').setup({
         --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
         --   },
         -- },
-        -- pickers = {}
+        pickers = {
+          -- ['find_files'] = {
+          --  hidden = true
+          -- }
+        },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
@@ -584,6 +588,8 @@ require('lazy').setup({
         -- tsserver = {},
         --
 
+        tsserver = {},
+        gopls = {},
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -615,7 +621,7 @@ require('lazy').setup({
         'stylua', -- Used to format Lua code
         'gopls',
         'tsserver',
-        'prettierd',
+        'prettier',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -662,7 +668,8 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         go = { 'gofumpt', 'goimports_reviser', 'golines' },
-        typescript = { 'prettierd' },
+        typescript = { 'prettier' },
+        typescriptreact = { 'prettier' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
