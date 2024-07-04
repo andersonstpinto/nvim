@@ -555,6 +555,11 @@ require('lazy').setup({
         -- tsserver = {},
         --
 
+        tailwindcss = {},
+        prettier = {},
+        jsonls = {},
+        prismals = {},
+        eslint = {},
         tsserver = {},
         gopls = {},
         lua_ls = {
@@ -590,6 +595,9 @@ require('lazy').setup({
         'tsserver',
         'prettier',
         'jsonls',
+        'prismals',
+        'eslint',
+        'tailwindcss',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
